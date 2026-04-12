@@ -23,7 +23,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-32 bg-zinc-50/50 relative overflow-hidden">
+    <section id="Testimonials" className="py-32 bg-zinc-50/50 relative overflow-hidden">
       
       <div className="absolute inset-0 grid-background opacity-20"></div>
 

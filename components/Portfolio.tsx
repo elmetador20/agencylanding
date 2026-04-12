@@ -51,7 +51,7 @@ const projects = [
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="py-32 bg-brand-white relative">
+    <section id="Portfolio" className="py-32 bg-brand-white relative">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-24">
           <motion.div

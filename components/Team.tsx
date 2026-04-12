@@ -30,7 +30,7 @@ export default function Team() {
   };
 
   return (
-    <section className="py-32 bg-white relative  items-center  justify-center overflow-hidden" id="about">
+    <section className="py-32 bg-white relative  items-center  justify-center overflow-hidden" id="Team">
       <div className="max-w-7xl mx-auto px-6 relative z-10  items-center justify-center text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

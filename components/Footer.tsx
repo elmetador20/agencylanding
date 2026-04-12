@@ -38,9 +38,9 @@ export default function Footer() {
             <h4 className="text-[10px] font-black uppercase tracking-[0.25em] text-brand-black mb-8 opacity-70">Navigation</h4>
             <ul className="space-y-4 text-xs font-black uppercase tracking-widest text-zinc-400">
               <li><Link href="/" className="hover:text-brand-blue transition-colors">Home</Link></li>
-              <li><Link href="/#services" className="hover:text-brand-blue transition-colors">Prebuilt</Link></li>
-              <li><Link href="/#portfolio" className="hover:text-brand-blue transition-colors">Customized</Link></li>
-              <li><Link href="/#about" className="hover:text-brand-blue transition-colors">About Us</Link></li>
+              <li><Link href="/#Services" className="hover:text-brand-blue transition-colors">Services</Link></li>
+              <li><Link href="/#Portfolio" className="hover:text-brand-blue transition-colors">Projects</Link></li>
+              <li><Link href="/#Team" className="hover:text-brand-blue transition-colors">About Us</Link></li>
               <li><Link href="/contact" className="hover:text-brand-blue transition-colors">Contact</Link></li>
             </ul>
           </div>
