@@ -22,7 +22,7 @@ export default function Navbar() {
         <div className={`bg-white border border-brand-border rounded-full px-5 py-6 flex items-center justify-between transition-all duration-700 shadow-sm ${isScrolled ? 'scale-95 shadow-xl' : ''}`}>
 
           <div className="hidden md:contents">
-            
+
             <div className="flex-1 flex justify-center gap-4">
               <Link href="/#services" className="text-sm font-black text-brand-black hover:text-brand-blue transition-colors">
                 Home
@@ -30,7 +30,7 @@ export default function Navbar() {
               <Link href="/#portfolio" className="text-sm font-black text-brand-black hover:text-brand-blue transition-colors">
                 Services
               </Link>
-               <Link href="/#about" className="text-sm font-black text-brand-black hover:text-brand-blue transition-colors">
+              <Link href="/#about" className="text-sm font-black text-brand-black hover:text-brand-blue transition-colors">
                 About Us
               </Link>
             </div>
@@ -50,11 +50,11 @@ export default function Navbar() {
               <Link href="/#about" className="text-sm font-black text-brand-black hover:text-brand-blue transition-colors">
                 Projects
               </Link>
-              <Link href="mailto:hello@fluxgen.ai" className="text-sm font-black text-brand-black hover:text-brand-blue transition-colors">
+              <Link href="#" className="text-sm font-black text-brand-black hover:text-brand-blue transition-colors">
                 Clients
               </Link>
               <Link href="/contact" className="text-sm font-black text-brand-black hover:text-brand-blue transition-colors">
-               Contact
+                Contact
               </Link>
             </div>
           </div>
@@ -88,10 +88,12 @@ export default function Navbar() {
             className="md:hidden absolute top-24 left-6 right-6 bg-white border border-brand-border p-8 rounded-[2.5rem] pointer-events-auto shadow-2xl"
           >
             <div className="flex flex-col gap-6 text-center">
-              <Link href="/#services" className="text-lg font-black text-brand-black" onClick={() => setIsMobileMenuOpen(false)}>Prebuilt</Link>
-              <Link href="/#portfolio" className="text-lg font-black text-brand-black" onClick={() => setIsMobileMenuOpen(false)}>Customized</Link>
+              <Link href="/#services" className="text-lg font-black text-brand-black" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
+              <Link href="/#portfolio" className="text-lg font-black text-brand-black" onClick={() => setIsMobileMenuOpen(false)}>Services</Link>
               <Link href="/#about" className="text-lg font-black text-brand-black" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
-              <Link href="/contact" className="text-lg font-black text-brand-blue" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</Link>
+              <Link href="/#portfolio" className="text-lg font-black text-brand-black" onClick={() => setIsMobileMenuOpen(false)}>Projects</Link>
+              <Link href="#" className="text-lg font-black text-brand-black" onClick={() => setIsMobileMenuOpen(false)}>Clients</Link>
+              <Link href="/contact" className="text-lg font-black text-brand-blue" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
             </div>
           </motion.div>
         )}
