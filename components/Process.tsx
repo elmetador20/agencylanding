@@ -28,11 +28,19 @@ const steps = [
 export default function Process() {
   return (
     <section id="process" className="py-32 bg-brand-white relative overflow-hidden">
-      {/* Background Gradient */}
+      
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-brand-blue/5 blur-[120px] -z-10 rounded-full"></div>
 
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-24">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="inline-block rounded-full bg-brand-blue/5 border border-brand-blue/10 px-4 py-1.5 text-[10px] uppercase font-black tracking-widest text-brand-blue mb-8"
+          >
+            Workflow
+          </motion.div>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -53,7 +61,7 @@ export default function Process() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 relative">
-          {/* Connector Line (Desktop) */}
+          
           <div className="hidden lg:block absolute top-[50px] left-0 right-0 h-[2px] bg-zinc-100 -z-10"></div>
 
           {steps.map((step, idx) => (

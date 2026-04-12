@@ -2,49 +2,49 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Link } from 'lucide-react';
 
 const projects = [
   {
-    title: 'Lal Sweets Ecom Website',
-    category: 'E-commerce Design',
-    description: 'Modern sweets store with responsive design for smooth shopping.',
-    image: '/portfolio_ecommerce_luxury_1775505873512.png', // Reusing placeholder that fits
-    link: 'https://www.lalsweets.com/'
+    title: 'LeapSkill',
+    category: 'AI Career Platform',
+    description: 'AI-powered platform designed to help students and professionals advance their careers through personalized guidance, skill development, and job matching.',
+    image: '/leapskill.png',
+    link: 'https://www.leapskil.com/'
   },
   {
-    title: 'Kirtilals : Luxury Website',
-    category: 'Luxury UX',
-    description: 'Premium diamond-jewellery store with elegant UX for luxury buyers.',
-    image: '/portfolio_professional_services_1775505933895.png',
-    link: 'https://www.kirtilals.com/'
+    title: 'TedxKiet Website',
+    category: 'CLub Webiste',
+    description: 'Premium Club website with enhanced SEO.',
+    image: '/TedxKiet.png',
+    link: 'https://www.tedxkiet.com/'
   },
   {
-    title: 'Tradescribe: Trading Platform',
+    title: 'Agrosync',
     category: 'Fintech / AI',
     description: 'Built a sleek journaling platform for tracking trades with AI-backed analytics.',
-    image: '/portfolio_fintech_app_1775505914407.png',
+    image: '/TedxKiet.png',
     link: 'https://tradescribe.in/'
   },
   {
-    title: 'Murzban: Clothing Luxury',
-    category: 'E-commerce Design',
-    description: 'Modern online store for curated men’s & women’s designer fashion.',
-    image: '/portfolio_ai_saas_1775505893621.png',
-    link: 'https://murzban.in/'
+    title: 'Sprinthacks',
+    category: 'Google Developer Club website ',
+    description: 'Official website for Google Developer Club, KIET Group of Institutions, featuring events, workshops, and tech community initiatives.',
+    image: '/leapskill.png',
+    link: 'https://Sprinthacks.in/'
   },
   {
     title: 'Greenfeels: Sustainable Ecom',
     category: 'Sustainable Design',
     description: 'Curated eco-friendly essentials in a clean responsive design for conscious shoppers.',
-    image: '/portfolio_ecommerce_luxury_1775505873512.png',
+    image: '/leapskill.png',
     link: 'https://greenfeels.in/'
   },
   {
     title: 'Momentz',
     category: 'Premium Storefront',
     description: 'Curated luxury gifts and premium home décor in a sleek online storefront.',
-    image: '/portfolio_professional_services_1775505933895.png',
+    image: '/TedxKiet.png',
     link: 'https://momentz.in/'
   }
 ];
@@ -54,7 +54,15 @@ export default function Portfolio() {
     <section id="portfolio" className="py-32 bg-brand-white relative">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-24">
-          <motion.h2 
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="inline-block rounded-full bg-brand-blue/5 border border-brand-blue/10 px-4 py-1.5 text-[10px] uppercase font-black tracking-widest text-brand-blue mb-8"
+          >
+            Portfolio
+          </motion.div>
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -62,7 +70,7 @@ export default function Portfolio() {
           >
             Turning Visions Into <span className="text-brand-blue">Digital Reality.</span>
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -85,24 +93,26 @@ export default function Portfolio() {
               className="group cursor-pointer bg-white border border-brand-border rounded-[2.5rem] p-4 shadow-sm hover:shadow-2xl transition-all duration-500"
             >
               <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden bg-zinc-50 mb-6">
-                <Image 
-                  src={project.image} 
-                  alt={project.title} 
+                <Image
+                  src={project.image}
+                  alt={project.title}
                   fill
-                  className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                  className="object-cover  transition-all duration-700"
                 />
                 <div className="absolute inset-0 bg-brand-black/0 group-hover:bg-brand-black/20 transition-colors duration-500 flex items-center justify-center">
-                    <div className="w-12 h-12 rounded-full bg-white text-brand-black flex items-center justify-center translate-y-10 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
-                        <ArrowUpRight size={20} />
-                    </div>
+                  <div className="w-12 h-12 rounded-full bg-white text-brand-black flex items-center justify-center translate-y-10 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+                    <Link >
+                      <ArrowUpRight size={20} />
+                    </Link>
+                  </div>
                 </div>
               </div>
               <div className="px-4 pb-4">
-                  <div className="text-[10px] font-black uppercase tracking-[0.2em] text-brand-blue mb-2">{project.category}</div>
-                  <h3 className="text-xl font-black mb-2 tracking-tight group-hover:text-brand-blue transition-colors">{project.title}</h3>
-                  <p className="text-xs text-zinc-500 font-medium leading-relaxed line-clamp-2">
-                    {project.description}
-                  </p>
+                <div className="text-[10px] font-black uppercase tracking-[0.2em] text-brand-blue mb-2">{project.category}</div>
+                <h3 className="text-xl font-black mb-2 tracking-tight group-hover:text-brand-blue transition-colors">{project.title}</h3>
+                <p className="text-xs text-zinc-500 font-medium leading-relaxed line-clamp-2">
+                  {project.description}
+                </p>
               </div>
             </motion.div>
           ))}

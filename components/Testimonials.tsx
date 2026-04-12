@@ -24,11 +24,19 @@ const testimonials = [
 export default function Testimonials() {
   return (
     <section className="py-32 bg-zinc-50/50 relative overflow-hidden">
-      {/* Grid Pattern */}
+      
       <div className="absolute inset-0 grid-background opacity-20"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-20">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="inline-block rounded-full bg-brand-blue/5 border border-brand-blue/10 px-4 py-1.5 text-[10px] uppercase font-black tracking-widest text-brand-blue mb-8"
+          >
+            Wall of Love
+          </motion.div>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
