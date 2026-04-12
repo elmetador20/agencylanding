@@ -16,7 +16,8 @@ const services = [
     title: 'Custom Web Apps',
     desc: 'Bespoke React and Next.js applications engineered for high-scale performance.',
     icon: Globe,
-    color: 'bg-blue-50 text-brand-blue'
+    color: 'bg-blue-50 text-brand-blue',
+    link:"www.google.com"
   },
   {
     title: 'E-commerce Solutions',
@@ -55,6 +56,14 @@ export default function Services() {
     <section id="services" className="py-32 relative bg-brand-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-20">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="inline-block rounded-full bg-brand-blue/5 border border-brand-blue/10 px-4 py-1.5 text-[10px] uppercase font-black tracking-widest text-brand-blue mb-8"
+          >
+            Information
+          </motion.div>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
