@@ -7,6 +7,9 @@ import FAQs from '@/components/FAQs';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
 import FloatingWidgets from '@/components/FloatingWidgets';
+import Services from '@/components/Services';
+import Testimonials from '@/components/Testimonials';
+import Pricing from '@/components/Pricing';
 
 export default function Home() {
   return (
@@ -16,6 +19,9 @@ export default function Home() {
       <Marquee />
       <Portfolio />
       <Team />
+      <Services/>
+      <Testimonials/>
+      <Pricing/>
       <FAQs />
       <CTA />
       <Footer />
