@@ -5,12 +5,11 @@ import { motion } from 'framer-motion';
 const words = [
   "Develop it Once",
   "Develop it from Best",
-  "Develop it Once",
-  "Develop it from Best",
-  "Develop it Once",
-  "Develop it from Best",
-  "Develop it Once",
-  "Develop it from Best",
+  "Engineering Digital Excellence",
+  "Designed to Convert",
+  "Built for Real Users",
+  "From Concept to Launch",
+  "We Don’t Just Code — We Create",
 ];
 
 export default function Marquee() {
@@ -23,10 +22,10 @@ export default function Marquee() {
       >
         {words.map((word, i) => (
           <div key={i} className="flex items-center gap-10">
-             <span className="text-3xl md:text-5xl font-black italic tracking-tighter text-brand-black uppercase">
-                {word}
-             </span>
-             <div className="w-4 h-4 rounded-full bg-brand-blue shadow-lg shadow-brand-blue/30"></div>
+            <span className="text-3xl md:text-5xl font-black italic tracking-tighter text-brand-black uppercase">
+              {word}
+            </span>
+            <div className="w-4 h-4 rounded-full bg-brand-black shadow-lg shadow-brand-blue/30"></div>
           </div>
         ))}
       </motion.div>
@@ -37,10 +36,10 @@ export default function Marquee() {
       >
         {words.map((word, i) => (
           <div key={i} className="flex items-center gap-10">
-             <span className="text-3xl md:text-5xl font-black italic tracking-tighter text-brand-black uppercase">
-                {word}
-             </span>
-             <div className="w-4 h-4 rounded-full bg-brand-blue shadow-lg shadow-brand-blue/30"></div>
+            <span className="text-3xl md:text-5xl font-black italic tracking-tighter text-brand-black uppercase">
+              {word}
+            </span>
+            <div className="w-4 h-4 rounded-full bg-brand-black shadow-lg shadow-brand-blue/30"></div>
           </div>
         ))}
       </motion.div>

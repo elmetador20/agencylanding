@@ -7,7 +7,7 @@ import Link from 'next/link';
 export default function FloatingWidgets() {
   return (
     <div className="fixed inset-0 pointer-events-none z-[999999]">
-      {/* Instagram Button - Bottom Left */}
+      
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
@@ -27,18 +27,17 @@ export default function FloatingWidgets() {
         </motion.div>
       </motion.div>
 
-      {/* WhatsApp Button - Bottom Right (Elevated for visibility) */}
       <motion.div
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
-        className="absolute bottom-24 right-10 pointer-events-auto"
+        className="absolute bottom-10 right-10 pointer-events-auto"
       >
         <motion.div
            animate={{ scale: [1, 1.2, 1] }}
            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
         >
           <Link 
-            href="https://wa.me/910000000000"
+            href="https://wa.me/917651842251"
             target="_blank"
             className="w-18 h-18 rounded-full bg-[#25D366] flex items-center justify-center text-white shadow-[0_0_50px_rgba(37,211,102,0.8)] hover:scale-125 transition-all duration-500 border-4 border-white/40"
           >
