@@ -6,10 +6,10 @@ import { Mail, Send } from 'lucide-react';
 export default function CTA() {
   return (
     <section className="py-32 bg-white relative overflow-hidden h-[600px] flex items-center justify-center border-t border-brand-border" id="contact">
-      {/* Huge Background Watermark */}
+      
       <div className="absolute inset-0 flex items-center justify-center select-none pointer-events-none">
         <h2 className="text-[25vw] font-black text-brand-black/[0.03] tracking-tighter uppercase leading-none">
-          FLUXGEN
+          FLUXGENAI
         </h2>
       </div>
 
@@ -31,7 +31,6 @@ export default function CTA() {
           </a>
         </motion.div>
 
-        {/* Subscription Form */}
         <motion.div
            initial={{ opacity: 0, y: 20 }}
            whileInView={{ opacity: 1, y: 0 }}
