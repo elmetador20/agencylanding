@@ -10,6 +10,7 @@ import FloatingWidgets from '@/components/FloatingWidgets';
 import Services from '@/components/Services';
 import Testimonials from '@/components/Testimonials';
 import Pricing from '@/components/Pricing';
+import Process from '@/components/Process';
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <Portfolio />
       <Team />
       <Services/>
+      <Process />
       <Testimonials/>
       <Pricing/>
       <FAQs />

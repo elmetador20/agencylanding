@@ -6,16 +6,16 @@ import { Quote } from 'lucide-react';
 
 const testimonials = [
   {
-    name: 'Sarah Jenkins',
-    role: 'Founder, EcoStream',
-    image: '/testimonial_avatar_1_1775505972958.png',
-    text: 'FluxGen didn\'t just build a website; they built our entire growth engine. Our conversions skyrocketed by 140% within the first month. Elite performance.',
-    stats: '140% ROI'
+    name: 'Shubham Srivastava',
+    role: 'Founder, SatyaSakshi',
+    image: '/av1.png',
+    text: 'FluxGen engineered our entire ecosystem-delivering a seamless mobile app and a powerful admin panel for total operational control. Truly elite execution.',
+    stats: 'Full-Stack Delivery'
   },
   {
-    name: 'David Chen',
-    role: 'CTO, NexaCorp',
-    image: '/testimonial_avatar_2_1775505992320.png',
+    name: 'Ayushi Srivastava',
+    role: 'Co-founder, SatyaSakshi LLP',
+    image: '/av2.png',
     text: 'The absolute best engineering team we’ve ever worked with. Their attention to detail and obsession with performance is unparalleled. Highly recommended.',
     stats: '2x Conversions'
   }
