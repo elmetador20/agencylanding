@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const WEBSITE_PLANS = [
   {
     name: 'STARTER WEBSITE',
-    price: '₹15,000',
+    price: '₹19,999',
     desc: 'Ideal for personal brands or small businesses starting online',
     features: [
       'Up to 5-7 Pages',
@@ -22,8 +22,8 @@ const WEBSITE_PLANS = [
   },
   {
     name: 'BUSINESS WEBSITE',
-    price: '₹30,000', // Adjusted from 25k to fit between 15k and 50k
-    desc: 'Perfect for growing businesses that need a strong online presence\nPlatform - Wordpress/Shopify/Wix',
+    price: '₹34,999', // Adjusted from 25k to fit between 15k and 50k
+    desc: 'Perfect for growing businesses that need a strong online presence\nBuilt using modern full-stack frameworks',
     features: [
       'Up to 7-12 Pages',
       'Custom UI/UX Design',
@@ -38,7 +38,7 @@ const WEBSITE_PLANS = [
   },
   {
     name: 'CUSTOM WEBSITE',
-    price: '₹50,000+', // Changed to 50k+ as requested
+    price: '₹59,999+', // Changed to 50k+ as requested
     desc: 'Ideal for brands that require advanced features, e-commerce, and high performance',
     features: [
       'High Performance Custom Design',

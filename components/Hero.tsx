@@ -414,8 +414,8 @@ export default function Hero() {
                   className="transition-transform duration-200 group-hover:translate-x-1"
                 />
               </Link>
-              <Link href="/contact" className="btn-secondary">
-                Contact Us
+              <Link href="https://wa.me/917651842251" className="btn-secondary">
+                Book a meet
               </Link>
             </motion.div>
           </motion.div>

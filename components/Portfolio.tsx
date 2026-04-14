@@ -40,7 +40,7 @@ const WEBSITES: WebProject[] = [
     title: 'LeapSkill',
     category: 'AI Career Platform',
     image: '/leapskill.png',
-    link: 'https://www.leapskil.com/',
+    link: 'https://leapskill.vercel.app/',
     points: [
       'AI-powered career guidance personalised per user profile.',
       'Skill gap analysis with curated learning roadmaps.',
@@ -63,17 +63,17 @@ const WEBSITES: WebProject[] = [
   },
   {
     id: 3,
-    title: 'Greenfeels',
-    category: 'Sustainable E-Commerce',
-    image: '/leapskill.png',
-    link: 'https://greenfeels.in/',
+    title: 'Nexyrium',
+    category: 'B2B Data & Venture Intelligence',
+    image: '/Nexyrium.png',
+    link: 'https://www.nexyrium.in/',
     points: [
-      'Curated eco-friendly storefront for conscious consumers.',
-      'Optimised product filtering with zero layout shift.',
-      'Integrated trust signals and carbon-neutral branding.',
-      'Fast checkout flow boosting conversion by 40%.',
+      'Designed and developed a high-conversion website for a VC database and venture intelligence agency.',
+      'Structured data-heavy offerings into clear, scannable sections for founders and startup teams.',
+      'Built trust-focused UI with strong positioning, credibility signals, and clean information hierarchy.',
+      'Optimized user journey and CTA placement to drive lead generation and inquiry conversions.',
     ],
-  },
+  }
 ];
 
 // ─────────────────────────────────────────────────────────────────
@@ -106,8 +106,8 @@ const yumScreenshots = [
       <svg viewBox="0 0 100 140" className="w-full h-full">
         <rect width="100" height="140" fill="#F0FDF4" rx="8" />
         <text x="50" y="30" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#166534">Meal Plan</text>
-        {[0,1,2,3,4,5,6].map(i => (
-          <rect key={i} x={8 + i*13} y="40" width="11" height="40" rx="3" fill={i < 4 ? '#22C55E' : '#D1FAE5'} />
+        {[0, 1, 2, 3, 4, 5, 6].map(i => (
+          <rect key={i} x={8 + i * 13} y="40" width="11" height="40" rx="3" fill={i < 4 ? '#22C55E' : '#D1FAE5'} />
         ))}
         <text x="50" y="94" textAnchor="middle" fontSize="7" fill="#4B5563">Mon-Sun</text>
         <rect x="8" y="104" width="84" height="12" rx="4" fill="#BBF7D0" />
@@ -143,11 +143,11 @@ const lmsScreenshots = [
       <svg viewBox="0 0 100 140" className="w-full h-full">
         <rect width="100" height="140" fill="#EFF6FF" rx="8" />
         <text x="50" y="20" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#1E40AF">My Courses</text>
-        {[0,1,2].map(i => (
+        {[0, 1, 2].map(i => (
           <g key={i} transform={`translate(0, ${i * 34})`}>
-            <rect x="8" y="26" width="84" height="28" rx="5" fill={i===0?'#3B82F6':i===1?'#6366F1':'#8B5CF6'} opacity="0.12" />
-            <rect x="14" y="30" width="20" height="20" rx="4" fill={i===0?'#3B82F6':i===1?'#6366F1':'#8B5CF6'} opacity="0.3" />
-            <rect x="38" y="32" width="48" height="5" rx="2" fill={i===0?'#1D4ED8':i===1?'#4338CA':'#6D28D9'} opacity="0.4" />
+            <rect x="8" y="26" width="84" height="28" rx="5" fill={i === 0 ? '#3B82F6' : i === 1 ? '#6366F1' : '#8B5CF6'} opacity="0.12" />
+            <rect x="14" y="30" width="20" height="20" rx="4" fill={i === 0 ? '#3B82F6' : i === 1 ? '#6366F1' : '#8B5CF6'} opacity="0.3" />
+            <rect x="38" y="32" width="48" height="5" rx="2" fill={i === 0 ? '#1D4ED8' : i === 1 ? '#4338CA' : '#6D28D9'} opacity="0.4" />
             <rect x="38" y="41" width="30" height="5" rx="2" fill="#D1D5DB" />
           </g>
         ))}
@@ -221,9 +221,9 @@ const finScreenshots = [
         <text x="12" y="18" fontSize="8" fontWeight="bold" fill="#065F46">Transactions</text>
         {[
           { icon: '🛒', label: 'Grocery', amt: '-₹420', color: '#EF4444' },
-          { icon: '💰', label: 'Salary',  amt: '+₹52k', color: '#10B981' },
+          { icon: '💰', label: 'Salary', amt: '+₹52k', color: '#10B981' },
           { icon: '⚡', label: 'Electric', amt: '-₹890', color: '#F59E0B' },
-          { icon: '🚕', label: 'Uber',    amt: '-₹220', color: '#EF4444' },
+          { icon: '🚕', label: 'Uber', amt: '-₹220', color: '#EF4444' },
         ].map((t, i) => (
           <g key={i} transform={`translate(0, ${i * 28})`}>
             <rect x="8" y="22" width="84" height="22" rx="5" fill="white" />
@@ -282,11 +282,11 @@ const ayurScreenshots = [
         <rect x="8" y="22" width="84" height="26" rx="6" fill="#7C3AED" opacity="0.1" />
         <text x="50" y="30" textAnchor="middle" fontSize="6" fill="#7C3AED">Skin Health Score</text>
         <text x="50" y="42" textAnchor="middle" fontSize="14" fontWeight="bold" fill="#7C3AED">92/100</text>
-        {['Hydration','UV Damage','Texture','Tone'].map((l,i)=>(
-          <g key={i} transform={`translate(0,${i*22})`}>
+        {['Hydration', 'UV Damage', 'Texture', 'Tone'].map((l, i) => (
+          <g key={i} transform={`translate(0,${i * 22})`}>
             <text x="12" y="60" fontSize="7" fill="#4B5563">{l}</text>
             <rect x="12" y="64" width="76" height="5" rx="2" fill="#EDE9FE" />
-            <rect x="12" y="64" width={[60,30,68,50][i]} height="5" rx="2" fill="#8B5CF6" />
+            <rect x="12" y="64" width={[60, 30, 68, 50][i]} height="5" rx="2" fill="#8B5CF6" />
           </g>
         ))}
       </svg>
@@ -303,8 +303,8 @@ const ayurScreenshots = [
           { msg: 'Apply neem paste ✨', left: false },
           { msg: 'Any side effects?', left: true },
           { msg: 'None — 100% natural', left: false },
-        ].map((c,i) => (
-          <g key={i} transform={`translate(0,${i*28})`}>
+        ].map((c, i) => (
+          <g key={i} transform={`translate(0,${i * 28})`}>
             <rect
               x={c.left ? 8 : 40} y={22} width={52} height={18} rx={5}
               fill={c.left ? '#D1FAE5' : '#059669'}
@@ -751,8 +751,8 @@ export default function Portfolio() {
             {tab === 'websites'
               ? WEBSITES.map((p, i) => <WebBlock key={p.id} project={p} index={i} />)
               : APPLICATIONS.map((p, i) => (
-                  <AppBlock key={p.id} project={p} index={i} onPlay={() => setActiveVideo(p)} />
-                ))
+                <AppBlock key={p.id} project={p} index={i} onPlay={() => setActiveVideo(p)} />
+              ))
             }
           </motion.div>
         </AnimatePresence>
