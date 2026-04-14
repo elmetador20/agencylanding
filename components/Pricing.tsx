@@ -7,8 +7,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 const WEBSITE_PLANS = [
   {
     name: 'STARTER WEBSITE',
+    sub: 'Ideal for personal brands or small businesses starting online',
     price: '₹19,999',
-    desc: 'Ideal for personal brands or small businesses starting online',
+    desc: '',
     features: [
       'Up to 5-7 Pages',
       'Responsive (Mobile-Friendly) Design',
@@ -22,8 +23,9 @@ const WEBSITE_PLANS = [
   },
   {
     name: 'BUSINESS WEBSITE',
-    price: '₹34,999', // Adjusted from 25k to fit between 15k and 50k
-    desc: 'Perfect for growing businesses that need a strong online presence\nBuilt using modern full-stack frameworks',
+    sub: 'Perfect for growing businesses that need a strong online presence\nBuilt using modern full-stack frameworks',
+    price: '₹34,999',
+    desc: '',
     features: [
       'Up to 7-12 Pages',
       'Custom UI/UX Design',
@@ -38,8 +40,9 @@ const WEBSITE_PLANS = [
   },
   {
     name: 'CUSTOM WEBSITE',
-    price: '₹59,999+', // Changed to 50k+ as requested
-    desc: 'Ideal for brands that require advanced features, e-commerce, and high performance',
+    sub: 'Ideal for brands that require advanced features, e-commerce, and high performance',
+    price: '₹59,999+',
+    desc: '',
     features: [
       'High Performance Custom Design',
       'E-commerce Functionality',
@@ -117,7 +120,7 @@ export default function Pricing() {
   return (
     <section id="pricing" className="py-32 bg-brand-white">
       <div className="max-w-[1200px] mx-auto px-6">
-        
+
         {/* Header */}
         <div className="text-center mb-16">
           <motion.h2
@@ -152,7 +155,7 @@ export default function Pricing() {
               onClick={() => setTab(tab === 'websites' ? 'applications' : 'websites')}
               className="relative w-12 h-6 rounded-full bg-zinc-200 transition-colors duration-300"
             >
-              <div 
+              <div
                 className="absolute top-1 bottom-1 w-4 rounded-full bg-brand-blue transition-all duration-300 shadow-sm"
                 style={{ left: tab === 'websites' ? '4px' : 'calc(100% - 20px)' }}
               />
@@ -172,13 +175,12 @@ export default function Pricing() {
             className="grid md:grid-cols-3 gap-6 lg:gap-8 items-start"
           >
             {plans.map((plan, idx) => (
-              <div 
+              <div
                 key={idx}
-                className={`flex flex-col relative rounded-3xl border transition-all duration-300 ${
-                  plan.isPopular 
-                    ? 'border-brand-blue/30 shadow-[0_8px_30px_rgb(0,102,255,0.12)] -translate-y-4 bg-white z-10' 
+                className={`flex flex-col relative rounded-3xl border transition-all duration-300 ${plan.isPopular
+                    ? 'border-brand-blue/30 shadow-[0_8px_30px_rgb(0,102,255,0.12)] -translate-y-4 bg-white z-10'
                     : 'border-zinc-200 bg-zinc-50/50 hover:border-zinc-300'
-                }`}
+                  }`}
                 style={{
                   minHeight: tab === 'applications' ? '780px' : '650px' // Apps have longer lists
                 }}
@@ -198,8 +200,8 @@ export default function Pricing() {
                     <h3 className="text-xl font-black uppercase tracking-tight text-brand-black mb-1">
                       {plan.name}
                     </h3>
-                    {plan.sub && <p className="text-sm text-zinc-500 font-medium mb-6">{plan.sub}</p>}
-                    
+                    {plan.sub && <p className="text-sm text-zinc-500 font-medium mb-6 whitespace-pre-line">{plan.sub}</p>}
+
                     <div className="flex items-baseline gap-1 mb-4 mt-6">
                       <span className="text-[32px] sm:text-4xl lg:text-[40px] xl:text-5xl font-black text-brand-blue tracking-tighter whitespace-nowrap">
                         {plan.price}
@@ -208,7 +210,7 @@ export default function Pricing() {
                         <span className="text-xs font-bold text-brand-black uppercase shrink-0">INR</span>
                       )}
                     </div>
-                    
+
                     {plan.desc && (
                       <p className="text-[13px] text-zinc-600 font-medium leading-relaxed mt-4 whitespace-pre-line">
                         {plan.desc}
@@ -227,7 +229,7 @@ export default function Pricing() {
                       <li key={i} className="flex items-start gap-3">
                         <div className="mt-1 shrink-0 w-4 h-4 rounded-full bg-brand-black flex items-center justify-center">
                           <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 4L3.5 6.5L9 1" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M1 4L3.5 6.5L9 1" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
                         </div>
                         <span className="text-[14px] text-zinc-600 font-medium leading-snug">{feature}</span>
@@ -236,12 +238,11 @@ export default function Pricing() {
                   </ul>
 
                   {/* CTA Button */}
-                  <button 
-                    className={`w-full py-3.5 rounded-xl text-sm font-bold transition-all duration-200 active:scale-95 ${
-                      plan.isPopular 
-                        ? 'bg-brand-blue text-white shadow-lg hover:bg-brand-blue/90' 
+                  <button
+                    className={`w-full py-3.5 rounded-xl text-sm font-bold transition-all duration-200 active:scale-95 ${plan.isPopular
+                        ? 'bg-brand-blue text-white shadow-lg hover:bg-brand-blue/90'
                         : 'bg-transparent border border-brand-blue text-brand-blue hover:bg-brand-blue/5'
-                    }`}
+                      }`}
                   >
                     {plan.cta}
                   </button>
@@ -265,7 +266,7 @@ export default function Pricing() {
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-brand-blue/10 flex items-center justify-center shrink-0">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0066FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
                   </svg>
                 </div>
                 <div>
@@ -273,7 +274,7 @@ export default function Pricing() {
                   <p className="text-zinc-500 font-medium text-xs">Optional add-ons to keep your application running flawlessly.</p>
                 </div>
               </div>
-              
+
               <div className="flex flex-wrap md:flex-nowrap gap-x-6 gap-y-3 justify-center text-sm font-bold text-brand-black">
                 <div className="flex flex-col items-center">
                   <span className="text-[11px] text-zinc-400 uppercase tracking-widest font-black mb-1">Maintenance</span>
