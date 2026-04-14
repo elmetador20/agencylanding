@@ -6,24 +6,20 @@ import { Plus, Minus } from 'lucide-react';
 
 const faqs = [
   {
-    question: "How long does it take to deliver a pre-built application or website?",
-    answer: "We usually complete the entire pre-built application or website development within 25 days, including deployment, testing, and final handover."
+    question: "How do you build high-quality Flutter apps?",
+    answer: "We follow a streamlined process from discovery to deployment, ensuring clarity, scalability, and performance."
   },
   {
-    question: "Do you provide the complete source code after development?",
-    answer: "Yes, absolutely. Once the development is complete and the final payment is processed, we hand over the entire source code, along with all project files and credentials. The complete authority of the code remains yours."
-  },
-  {
-    question: "What’s the difference between a pre-built and a custom development project?",
-    answer: "Our pre-built projects come with ready-made modules that can be quickly deployed and customized with your branding—perfect for fast launches. In contrast, custom development is built from scratch according to your unique requirements, giving you complete flexibility in design, functionality, and integrations."
-  },
-  {
-    question: "Do you provide maintenance and support after delivery?",
-    answer: "Yes, we provide 6 months of maintenance and support after project delivery. During this period, if there’s any glitch, bug, or technical issue, our team will resolve it promptly at no extra cost."
+    question: "What steps are involved in your app development process?",
+    answer: "Our process includes discovery, design, development, testing, and deployment to deliver seamless apps."
   },
   {
     question: "What technologies do you use for development?",
-    answer: "We use modern technologies like React JS, React Native, Node JS, and Next JS for frontend and backend, along with Figma for UI/UX design and Hostinger/AWS for hosting. This ensures high performance, scalability, and long-term reliability."
+    answer: "We use Flutter for apps, Spring Boot & Node.js for backend, and React/Next.js for frontend, along with Figma for UI/UX design."
+  },
+  {
+    question: "Do you provide maintenance and support after delivery?",
+    answer: "Yes, we offer 1 month of free support after delivery, followed by flexible paid maintenance plans."
   }
 ];
 

@@ -1,10 +1,12 @@
 'use client';
 
+import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { MapPin, Mail, Phone, ArrowUpRight, Instagram, MessageCircle } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import emailjs from '@emailjs/browser';
 
 const CONTACT_INFO = [
   {
@@ -25,13 +27,45 @@ const CONTACT_INFO = [
   {
     icon: Phone,
     title: "Phone",
-    content: "+91 7651842251 \n+91 9555541221",
+    content: "+91 9555541221 \n+91 7651842251",
   },
 ];
 
 const MARQUEE_TEXT = "Develop it Once • Develop it from Best • Develop it Once • Develop it from Best • Develop it Once • Develop it from Best •";
 
 export default function ContactPage() {
+  const form = useRef<HTMLFormElement>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [statusMessage, setStatusMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null);
+
+  const sendEmail = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!form.current) return;
+
+    setIsSubmitting(true);
+    setStatusMessage(null);
+
+    emailjs.sendForm(
+      'service_u8km8ew',
+      'template_gt9n5v9',
+      form.current,
+      { publicKey: '1KS3iDvYCxTkCPXNF' }
+    )
+    .then((result) => {
+      console.log('SUCCESS!', result.text);
+      setStatusMessage({ type: 'success', text: 'Message sent successfully!' });
+      form.current?.reset();
+    })
+    .catch((error) => {
+      console.log('FAILED...', error.text || error.message);
+      setStatusMessage({ type: 'error', text: `Failed: ${error.text || 'Network Error'}. Please check template fields.` });
+    })
+    .finally(() => {
+      setIsSubmitting(false);
+      setTimeout(() => setStatusMessage(null), 7000);
+    });
+  };
+
   return (
     <main className="min-h-screen bg-white">
       <Navbar />
@@ -147,13 +181,15 @@ export default function ContactPage() {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="card-premium h-fit"
+            className="card-premium h-fit relative"
           >
-            <form className="space-y-6">
+            <form ref={form} onSubmit={sendEmail} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <input
                     type="text"
+                    name="user_name"
+                    required
                     placeholder="Your Name"
                     className="w-full bg-zinc-50 border border-brand-border rounded-xl px-4 py-4 text-sm font-medium focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue transition-all outline-none"
                   />
@@ -161,6 +197,8 @@ export default function ContactPage() {
                 <div className="space-y-2">
                   <input
                     type="tel"
+                    name="user_phone"
+                    required
                     placeholder="Phone Number"
                     className="w-full bg-zinc-50 border border-brand-border rounded-xl px-4 py-4 text-sm font-medium focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue transition-all outline-none"
                   />
@@ -171,6 +209,8 @@ export default function ContactPage() {
                 <div className="space-y-2">
                   <input
                     type="email"
+                    name="user_email"
+                    required
                     placeholder="Email Address"
                     className="w-full bg-zinc-50 border border-brand-border rounded-xl px-4 py-4 text-sm font-medium focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue transition-all outline-none"
                   />
@@ -178,6 +218,8 @@ export default function ContactPage() {
                 <div className="space-y-2">
                   <input
                     type="text"
+                    name="subject"
+                    required
                     placeholder="Subject"
                     className="w-full bg-zinc-50 border border-brand-border rounded-xl px-4 py-4 text-sm font-medium focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue transition-all outline-none"
                   />
@@ -186,19 +228,33 @@ export default function ContactPage() {
 
               <div className="space-y-2">
                 <textarea
+                  name="message"
+                  required
                   placeholder="Message"
                   rows={4}
                   className="w-full bg-zinc-50 border border-brand-border rounded-xl px-4 py-4 text-sm font-medium focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue transition-all outline-none resize-none"
                 />
               </div>
 
-              <div className="flex justify-end">
+              <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+                <div className="flex-1">
+                  {statusMessage && (
+                    <motion.p
+                      initial={{ opacity: 0, y: 5 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className={`text-xs font-bold uppercase tracking-widest ${statusMessage.type === 'success' ? 'text-green-500' : 'text-red-500'}`}
+                    >
+                      {statusMessage.text}
+                    </motion.p>
+                  )}
+                </div>
                 <button
                   type="submit"
-                  className="px-8 py-4 bg-brand-black text-white font-black uppercase text-[10px] tracking-widest rounded-xl hover:bg-neutral-800 transition-all active:scale-95 flex items-center gap-2"
+                  disabled={isSubmitting}
+                  className="px-8 py-4 bg-brand-black text-white font-black uppercase text-[10px] tracking-widest rounded-xl hover:bg-neutral-800 transition-all active:scale-95 flex items-center gap-2 disabled:opacity-50 disabled:pointer-events-none shrink-0"
                 >
-                  Send Message
-                  <ArrowUpRight size={14} />
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  {!isSubmitting && <ArrowUpRight size={14} />}
                 </button>
               </div>
             </form>
